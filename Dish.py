@@ -8,7 +8,7 @@ def suggest_dishes(available_ingredients):
         match_count = sum(1 for ing in ingredients if process.extractOne(ing, available_ingredients)[1] > 80)
         match_percentage = (match_count / len(ingredients)) * 100
 
-        if match_percentage > 50:  # If at least 50% of ingredients are available
+        if match_percentage > 70:  # If at least 70% of ingredients are available
             suggested_dishes.append((dish, match_percentage))
     
     suggested_dishes.sort(key=lambda x: x[1], reverse=True)  # Sort by best match
@@ -25,10 +25,11 @@ def read_recipes(file_path):
     with open(file_path, 'r',encoding='utf-8') as file:
         reader = csv.reader(file)
         for row in reader:
-            dish = row[0]
-            Name=row[1]
+            dish = row[1]
+            
             ingredients = row[1:]
             recipes[dish] = ingredients
+            
     return recipes
 
 # Update the recipes dictionary
@@ -44,7 +45,7 @@ suggestions = suggest_dishes(user_ingredients)
 
 if suggestions:
     print("Suggested Dishes:")
-    for Name, match in suggestions:
-        print(f"- {Name} ({match:.1f}% match)")
+    for dish, match in suggestions:
+        print(f"- {dish} ({match:.1f}% match)")
 else:
     print("No matching dishes found. Try adding more ingredients!")

@@ -33,7 +33,7 @@ def read_recipes(file_path):
     return recipes
 
 # Update the recipes dictionary
-recipes = read_recipes('dish.csv')
+recipes = read_recipes('Dish.csv')
 
 # Example: Ingredients detected in the fridge
 user_ingredients = read_ingredients('ing.txt')

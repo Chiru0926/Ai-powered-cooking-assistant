@@ -25,7 +25,7 @@ def get_missing_ingredients(dish, recipes, current_ingredients):
 def main():
     recipes_file = 'Dish.csv'  # Update with your CSV file path
     ingredients_file = 'ing.txt'  # Update with your TXT file path
-    dish = input("Enter the name of the dish: ")
+    dish = input("Enter the no of the dish: ")
 
     recipes = read_recipes(recipes_file)
     current_ingredients = read_ingredients(ingredients_file)

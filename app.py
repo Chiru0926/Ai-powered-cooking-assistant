@@ -10,7 +10,7 @@ def main():
         print("1. Suggest Dishes")
         print("2. Read Recipe and TTS")
         print("3. Get Missing Ingredients")
-        print("4. Get Nutrient Information")
+        
         print("5. Exit")
         choice = input("Enter your choice: ")
 
